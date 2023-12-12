@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import avatar from '../public/avatar.png'
-import {BsPerson} from 'react-icons'
+import {BsPerson} from 'react-icons/bs'
 
 const style = {
     wrapper: `h-16 w-full bg-black text-white flex md:justify-around items-center px-60 fixed z-20`,
@@ -15,8 +15,8 @@ const style = {
     loginText: 'ml-2'
 }
 
-// const currentAccount = '0xb6FE30633bcF90133718D35190d948Fb6CECD8b2'
-const currentAccount = ``
+const currentAccount = '0xb6FE30633bcF90133718D35190d948Fb6CECD8b2'
+// const currentAccount = ``
 const Navbar = () => {
   return (
     <div className={style.wrapper}>
