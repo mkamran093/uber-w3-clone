@@ -22,7 +22,7 @@ const Navbar = () => {
     <div className={style.wrapper}>
         <div className={style.leftMenu}>
             <div className={style.logo}>
-                Uber
+                KUberX
             </div>
             <div className={style.menuItem}>Ride</div>
             <div className={style.menuItem}>Drive</div>

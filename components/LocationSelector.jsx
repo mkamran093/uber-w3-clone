@@ -4,9 +4,9 @@ import {useState} from 'react'
 
 const style = {
     wrapper: 'pt-2',
-    searchHeader: `w-full font-bold text-left flex items-center text-3xl p-4 overflow-hidden`,
+    searchHeader: `w-full font-bold text-left flex items-center text-3xl p-4 text-black`,
     inputBoxes: `flex flex-col mb-4 relative`,
-    inputBox: `h-10 mx-4 border-2 bg-[#eeeeee] flex items-center my-1 py-1 px-2`,
+    inputBox: `h-10 mx-4 border-2 bg-[#eeeeee] text-black flex items-center my-1 py-1 px-2`,
     focusedInputBox: 'border-black',
     svgContainer: 'mx-1',
     input: 'my-2 rounded-2 p-2 outline-none border-none bg-transparent h-full w-full',
@@ -17,6 +17,7 @@ const LocationSelector = () => {
     const [inFocus, setInFocus] = useState('from')
     const [pickup, setPickup] = useState('')
     const [dropoff, setDropoff] = useState('')
+
     return (
         <div className={style.wrapper}>
             <div className={style.searchHeader}>
@@ -33,7 +34,15 @@ const LocationSelector = () => {
                     <input type="text" className={style.input} placeholder='Enter pickup location' value={pickup} onChange={e => setPickup(e.target.value)} onFocus={() => setInFocus('from')}/>
                 </div>
                 <div className={style.verticalLine}></div>
-                <div className={`${style.inputBox} ${inFocus === 'to' && style.focusedInputBox}`}></div>
+                <div className={`${style.inputBox} ${inFocus === 'to' && style.focusedInputBox}`}>
+                <div className={style.svgContainer}>
+                        <svg viewBox='0 0 24 24' width='1em' height='1em'>
+                            <path fillRule='evenodd' clipRule='evenodd' d='M14 10h-44h4v-4zM7 7v10h10V7H7z'></path>
+                        </svg>
+                    </div>
+                    <input type="text" className={style.input} placeholder='Enter DropOff location' value={dropoff} onChange={e => setDropoff(e.target.value)} onFocus={() => setInFocus('to')}/>
+                
+                </div>
             </div>
 
         </div>
